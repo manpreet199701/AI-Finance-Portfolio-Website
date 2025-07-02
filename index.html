@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - AI, Finance & Tech Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            @apply px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 rounded-md transition-colors duration-300;
+        }
+        .active-nav {
+            @apply bg-gray-900 text-white;
+        }
+        .section {
+            @apply min-h-screen py-20 px-4 sm:px-6 lg:px-8;
+        }
+        .roadmap-item {
+            @apply relative pl-8 sm:pl-12 pb-12;
+        }
+        .roadmap-item:last-child {
+            @apply pb-0;
+        }
+        .roadmap-marker {
+            @apply absolute left-0 top-1.5 h-4 w-4 rounded-full bg-indigo-500;
+        }
+        .roadmap-line {
+            @apply absolute left-[7px] top-[22px] h-full w-0.5 bg-gray-600;
+        }
+        .skill-bar-fill {
+            @apply bg-indigo-500 h-full rounded-full transition-all duration-1000 ease-out;
+        }
+        .buy-coffee-btn {
+            @apply fixed bottom-5 right-5 bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-3 px-5 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 z-50 flex items-center gap-2;
+        }
+        .code-block {
+            @apply bg-gray-900 text-sm text-left p-4 rounded-md overflow-x-auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-800/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-40 shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-white font-bold text-xl">Your Name</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link active-nav" data-section="home">Home</a>
+                        <a href="#journey" class="nav-link" data-section="journey">My Journey</a>
+                        <a href="#phases" class="nav-link" data-section="phases">Phases & Skills</a>
+                        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                        <a href="#services" class="nav-link" data-section="services">Services</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block nav-link active-nav" data-section="home">Home</a>
+                <a href="#journey" class="block nav-link" data-section="journey">My Journey</a>
+                <a href="#phases" class="block nav-link" data-section="phases">Phases & Skills</a>
+                <a href="#projects" class="block nav-link" data-section="projects">Projects</a>
+                <a href="#services" class="block nav-link" data-section="services">Services</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section flex items-center justify-center text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x1080/111827/374151?text=Financial+Data+Visualization');">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
+                    From Logistics to AI-Powered Finance
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+                    Charting a new course at the intersection of technology, finance, and data. Follow my journey as I build, learn, and innovate.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+                        View My Work
+                    </a>
+                    <a href="#journey" class="border-2 border-indigo-500 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+                        My Journey
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Journey Section -->
+        <section id="journey" class="section bg-gray-900">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">My Journey: A Visual Roadmap</h2>
+                    <p class="mt-4 text-lg text-gray-400">From logistics expert to AI-driven finance professional.</p>
+                </div>
+                <div class="relative">
+                    <!-- The vertical line -->
+                    <div class="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 h-full w-0.5 bg-gray-700" aria-hidden="true"></div>
+                    
+                    <!-- Roadmap Items -->
+                    <div class="space-y-16">
+                        <!-- Item 1 -->
+                        <div class="relative flex items-center sm:justify-start">
+                            <div class="sm:w-1/2 sm:pr-8">
+                                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                    <p class="text-indigo-400 font-semibold">Milestone 1: The Foundation</p>
+                                    <h3 class="text-xl font-bold text-white mt-2">Mastering Logistics & Supply Chain</h3>
+                                    <p class="text-gray-400 mt-2">Built a successful career optimizing complex supply chains. Honed skills in process management, efficiency, and large-scale operations.</p>
+                                    <a href="#" class="mt-4 inline-block text-indigo-400 hover:text-indigo-300">View Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-8 h-8 bg-gray-900 rounded-full border-4 border-indigo-500 flex items-center justify-center">
+                                <i class="fas fa-truck text-indigo-400"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Item 2 -->
+                        <div class="relative flex items-center sm:justify-end">
+                            <div class="sm:w-1/2 sm:pl-8 text-left sm:text-right">
+                                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                    <p class="text-indigo-400 font-semibold">Milestone 2: The Pivot</p>
+                                    <h3 class="text-xl font-bold text-white mt-2">Diving into Code & Data</h3>
+                                    <p class="text-gray-400 mt-2">Began a self-taught journey into Python, data science fundamentals, and IT principles. The goal: to apply analytical rigor to new domains.</p>
+                                    <a href="#" class="mt-4 inline-block text-indigo-400 hover:text-indigo-300">View Learning Project <i class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-8 h-8 bg-gray-900 rounded-full border-4 border-indigo-500 flex items-center justify-center">
+                               <i class="fas fa-code text-indigo-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="relative flex items-center sm:justify-start">
+                             <div class="sm:w-1/2 sm:pr-8">
+                                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                    <p class="text-indigo-400 font-semibold">Milestone 3: The Synthesis</p>
+                                    <h3 class="text-xl font-bold text-white mt-2">Connecting AI to Finance</h3>
+                                    <p class="text-gray-400 mt-2">Started exploring financial markets, algorithmic trading concepts, and applying machine learning models to financial datasets.</p>
+                                    <a href="#" class="mt-4 inline-block text-indigo-400 hover:text-indigo-300">Explore Financial Analysis <i class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-8 h-8 bg-gray-900 rounded-full border-4 border-indigo-500 flex items-center justify-center">
+                                <i class="fas fa-brain text-indigo-400"></i>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="relative flex items-center sm:justify-end">
+                            <div class="sm:w-1/2 sm:pl-8 text-left sm:text-right">
+                                <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                                    <p class="text-indigo-400 font-semibold">Milestone 4: The Future</p>
+                                    <h3 class="text-xl font-bold text-white mt-2">Building & Collaborating</h3>
+                                    <p class="text-gray-400 mt-2">Now building proofs-of-concept, offering data-driven insights, and seeking collaborations to solve real-world problems in the finance-tech space.</p>
+                                    <a href="#services" class="mt-4 inline-block text-indigo-400 hover:text-indigo-300">Let's Collaborate <i class="fas fa-arrow-right ml-1"></i></a>
+                                </div>
+                            </div>
+                           <div class="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-8 h-8 bg-gray-900 rounded-full border-4 border-indigo-500 flex items-center justify-center">
+                                <i class="fas fa-lightbulb text-indigo-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phases & Skills Section -->
+        <section id="phases" class="section bg-gray-800">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Learning Phases & Core Skills</h2>
+                    <p class="mt-4 text-lg text-gray-400">A structured approach to mastering new domains.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Phases -->
+                    <div class="space-y-8">
+                        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-white"><span class="text-indigo-400">Phase 1:</span> Tech Foundations</h3>
+                            <p class="mt-3 text-gray-400">Building the bedrock. Focused on core programming, version control, and understanding the IT landscape. Key learnings in Python, Git, and system architecture.</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-white"><span class="text-indigo-400">Phase 2:</span> Data & AI Immersion</h3>
+                            <p class="mt-3 text-gray-400">From data manipulation to machine learning. Deep dive into Pandas, Scikit-learn, and data visualization libraries to extract meaningful insights from raw data.</p>
+                        </div>
+                        <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-white"><span class="text-indigo-400">Phase 3:</span> Financial Application</h3>
+                            <p class="mt-3 text-gray-400">Applying technical skills to the world of finance. Studying market structures, quantitative analysis, and developing trading strategy prototypes.</p>
+                        </div>
+                    </div>
+                    <!-- Skills -->
+                    <div class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-white mb-6 text-center">Skill Proficiency</h3>
+                        <div class="space-y-6">
+                            <!-- Skill 1 -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-base font-medium text-gray-300">Python</span>
+                                    <span class="text-sm font-medium text-gray-400">75%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-4">
+                                    <div class="skill-bar-fill" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <!-- Skill 2 -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-base font-medium text-gray-300">Data Analysis (Pandas, NumPy)</span>
+                                    <span class="text-sm font-medium text-gray-400">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-4">
+                                    <div class="skill-bar-fill" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <!-- Skill 3 -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-base font-medium text-gray-300">AI / Machine Learning</span>
+                                    <span class="text-sm font-medium text-gray-400">60%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-4">
+                                    <div class="skill-bar-fill" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <!-- Skill 4 -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-base font-medium text-gray-300">React</span>
+                                    <span class="text-sm font-medium text-gray-400">50%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-4">
+                                    <div class="skill-bar-fill" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                             <!-- Skill 5 -->
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-base font-medium text-gray-300">Docker</span>
+                                    <span class="text-sm font-medium text-gray-400">30%</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-4">
+                                    <div class="skill-bar-fill" style="width: 30%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section bg-gray-900">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Projects, Tutorials & Demos</h2>
+                    <p class="mt-4 text-lg text-gray-400">Showcasing my work, from concept to code.</p>
+                </div>
+                
+                <!-- Featured Project -->
+                <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden mb-16">
+                    <div class="md:flex">
+                        <div class="md:w-1/2">
+                           <img class="h-64 w-full object-cover md:h-full" src="https://placehold.co/800x600/1F2937/4F46E5?text=Featured+Project+Demo" alt="Featured Project" onerror="this.onerror=null;this.src='https://placehold.co/800x600/1F2937/FFFFFF?text=Image+Not+Found';">
+                        </div>
+                        <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                            <p class="text-sm text-indigo-400 font-bold uppercase">Featured Project</p>
+                            <h3 class="text-2xl font-bold text-white mt-2">AI-Powered Stock Trend Analyzer</h3>
+                            <p class="text-gray-400 mt-4">A web application that uses sentiment analysis from news headlines and historical price data to predict short-term stock trends. Built with Python, Flask, and Scikit-learn.</p>
+                            <div class="mt-6">
+                                <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                                    View Deep-Dive Tutorial
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Gallery -->
+                <h3 class="text-2xl font-bold text-white text-center mb-8">Project Gallery & Explainers</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                        <img class="h-48 w-full object-cover" src="https://placehold.co/600x400/1F2937/FFFFFF?text=Project+1" alt="Project 1">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white">Algorithmic Trading Backtester</h3>
+                            <p class="mt-3 text-gray-400 flex-grow">A Python tool to backtest trading strategies against historical market data, providing key performance metrics.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-semibold">View on GitHub <i class="fab fa-github ml-1"></i></a>
+                                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-semibold">Live Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                        <img class="h-48 w-full object-cover" src="https://placehold.co/600x400/1F2937/FFFFFF?text=Project+2" alt="Project 2">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white">Interactive Data Dashboard</h3>
+                            <p class="mt-3 text-gray-400 flex-grow">A custom Notion-style dashboard built with Dash/Plotly for visualizing complex financial datasets in real-time.</p>
+                             <div class="mt-4 flex justify-between items-center">
+                                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-semibold">Read Tutorial <i class="fas fa-book-open ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mini-Class Card -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                        <img class="h-48 w-full object-cover" src="https://placehold.co/600x400/1F2937/FFFFFF?text=Mini-Class" alt="Mini-Class">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-white">Mini-Class: Understanding REST APIs</h3>
+                            <p class="mt-3 text-gray-400 flex-grow">A single-page explainer on what REST APIs are, how they work, with code examples and real-world analogies.</p>
+                             <div class="mt-4 flex justify-between items-center">
+                                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-semibold">Read Explainer <i class="fas fa-chalkboard-teacher ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Demos & Embeds -->
+                <div class="mt-20 text-center">
+                    <h3 class="text-2xl font-bold text-white mb-8">Live Demos & Interactive Embeds</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- CodePen Embed -->
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                            <h4 class="text-xl font-bold text-white mb-4">UI Component Demo</h4>
+                            <p class="text-gray-400 mb-4">An interactive UI component built with React/Vue/JS.</p>
+                            <div class="aspect-w-16 aspect-h-9 bg-gray-900 rounded-md">
+                                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/anon/embed/abZJdYv?default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                                  See the Pen <a href="https://codepen.io/anon/pen/abZJdYv">
+                                  Untitled</a> by Anonymous (<a href="https://codepen.io/anon">@anon</a>)
+                                  on <a href="https://codepen.io">CodePen</a>.
+                                </iframe>
+                            </div>
+                        </div>
+                        <!-- Observable/Jupyter Embed -->
+                        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                            <h4 class="text-xl font-bold text-white mb-4">Data Science Notebook</h4>
+                            <p class="text-gray-400 mb-4">A live notebook demonstrating a data analysis or machine learning model.</p>
+                             <div class="aspect-w-16 aspect-h-9 bg-gray-900 rounded-md flex items-center justify-center">
+                               <p class="text-gray-500">Your Observable or Jupyter-Lite notebook embed goes here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section bg-gray-800">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Consultation & Collaboration</h2>
+                    <p class="mt-4 text-lg text-gray-400">Leverage my skills to bring your ideas to life.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <!-- Service 1 -->
+                    <div class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                        <div class="text-5xl text-indigo-400 mb-4"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="text-xl font-bold text-white">Data Analysis Deep Dive</h3>
+                        <p class="mt-3 text-gray-400">A 60-minute intensive session to review your data, uncover insights, and suggest analytical approaches.</p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                        <div class="text-5xl text-indigo-400 mb-4"><i class="fas fa-file-code"></i></div>
+                        <h3 class="text-xl font-bold text-white">Code Review & Insight</h3>
+                        <p class="mt-3 text-gray-400">Get a fresh pair of eyes on your Python code. I'll provide feedback on structure, efficiency, and best practices.</p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                        <div class="text-5xl text-indigo-400 mb-4"><i class="fas fa-tachometer-alt"></i></div>
+                        <h3 class="text-xl font-bold text-white">Custom Dashboard Setup</h3>
+                        <p class="mt-3 text-gray-400">Custom data dashboard design, setup, and training using tools like Notion, Dash, or other platforms.</p>
+                    </div>
+                     <!-- Service 4 -->
+                    <div class="bg-gray-900 p-8 rounded-lg shadow-lg md:col-span-2 lg:col-span-1">
+                         <div class="text-5xl text-indigo-400 mb-4"><i class="fas fa-lightbulb"></i></div>
+                        <h3 class="text-xl font-bold text-white">Strategy & PoC Prototyping</h3>
+                        <p class="mt-3 text-gray-400">From trading ideas to tangible prototypes. I can help you build a proof-of-concept in Python to validate your strategy.</p>
+                    </div>
+                </div>
+                 <div class="text-center mt-16">
+                    <a href="mailto:your.email@example.com" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 text-lg">
+                        Let's Talk
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+            <p>&copy; <span id="year"></span> Your Name. All Rights Reserved.</p>
+            <p class="mt-2 text-sm">Building bridges between finance and technology.</p>
+        </div>
+    </footer>
+
+    <!-- Buy Me A Coffee Button -->
+    <a href="#" target="_blank" rel="noopener noreferrer" class="buy-coffee-btn">
+        <i class="fas fa-coffee"></i>
+        <span>Buy me a coffee</span>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.6
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove('active-nav');
+                        if (link.dataset.section === id) {
+                            link.classList.add('active-nav');
+                        }
+                    });
+                    mobileNavLinks.forEach(link => {
+                        link.classList.remove('active-nav');
+                         if (link.dataset.section === id) {
+                            link.classList.add('active-nav');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
